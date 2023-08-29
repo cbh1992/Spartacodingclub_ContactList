@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
+
         adapter.itemClick = object : Adapter.ItemClick {
             override fun onClick(view: View, position: Int) {
                 val name : String = dataList[position].aName
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity() {
                 val starfiled : Boolean = dataList[position].aFavorit
                 Toast.makeText(this@MainActivity," $name 선택!", Toast.LENGTH_SHORT).show()
                 startActivity(Intent("android.intent.action.DIAL", Uri.parse("tel:$number")))
+
             }
         }
     }
